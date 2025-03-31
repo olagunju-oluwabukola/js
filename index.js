@@ -158,6 +158,34 @@ document.querySelector('.check').addEventListener('click', function(){
 
 
     console.log(numbers)
+    
+    const showModal = document.querySelector('.showModal')
+    const modal = document.querySelector('.modal')
+    const closeModal = document.querySelector('.closeModal')
+function toogleModal(){
+    modal.classList.remove('hidden')
+}
 
-    
-    
+function toogleClose(){
+    modal.classList.add('hidden')
+}
+
+    showModal.addEventListener('click',toogleModal )
+    closeModal.addEventListener('click',toogleClose )
+
+    const Titles = ['Tola', 'Shade', 'Lekan', 'Shaeeed', 'Soji']
+
+    const [e, , ,f] = Titles
+
+    console.log(e,f)
+
+    let a = 90
+    let b = 20
+    const obj = {a:10, b:9, c:5};
+    ({a, b} = obj);
+console.log(a,b)
+
+const books = ['novel', 'notes','Text']
+const newBooks = ['Journals', 'Papers', ...books]
+
+console.log(newBooks)
