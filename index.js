@@ -189,3 +189,10 @@ const books = ['novel', 'notes','Text']
 const newBooks = ['Journals', 'Papers', ...books]
 
 console.log(newBooks)
+
+const newText = document.querySelector('.text')
+
+setTimeout(function(){
+    newText.textContent = 'Asynchronous'
+}, 1000)
+newText.style.color ='red'
