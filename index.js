@@ -196,3 +196,56 @@ setTimeout(function(){
     newText.textContent = 'Asynchronous'
 }, 1000)
 newText.style.color ='red'
+
+const posts = function getPost(){
+  const request=  fetch('https://jsonplaceholder.typicode.com/posts')
+console.log(request)
+ request.then(response =>{
+if (response.status === 200){
+    console.log('success')
+    
+}
+else if (response.status = 404){
+    throw new Error('bad request')
+}
+return response.json()
+ } )
+
+ .then(data =>{
+    console.log(data)
+    const post = document.querySelector('.post')
+    const html = data.map(item => `<div>${item.title}</div>`).join('')
+    post.insertAdjacentHTML('beforeend', html)
+    // post.innerHTML = data[1].title
+    // post.style.color = 'red'
+ }
+   
+    
+    
+)
+ .catch(err=> console.log(`${err}`))
+   }
+posts()
+
+
+// const renderPost = function(data){
+// const html = `
+// <div>&{data.title}</div>`;
+// post.insertAdjacentHTML('beforeend', html)
+// }
+
+
+const myLocation = function (lat, lng){
+    fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
+    .then(response=> response.json()
+)
+.then(data=>{
+    console.log(data)
+    console.log(data.city)
+    console.log(data.country)
+})
+ 
+}
+
+
+myLocation(52.508, 13.381)
